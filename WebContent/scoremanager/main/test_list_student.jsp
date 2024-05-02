@@ -11,7 +11,7 @@
 
 	<c:param name="content">
 		<section class="me-4">
-			<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">成績一覧(学年)</h2>
+			<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4"style="background:#f2f2f2">成績一覧(学年)</h2>
 			<form action="TestListSubject.action"method="post">
 				<div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
 					<div class="col-4">
