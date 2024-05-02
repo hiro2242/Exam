@@ -15,7 +15,8 @@
 			<h2 class="h3 mb-3 fw-norma bg-secondary bg-opacity-10 py-2 px-4">成績参照</h2>
 			<form action="TestListSubject.action"method="post">
 				<div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-					<div class="col-4">
+				    <div class="col-4"style="width:15%; margin-left:5px; padding:5px;">科目情報</div>
+					<div class="col-4"style="width:20%; margin-left:10px; padding:10px;">
 						<label class="form-label" for="student-f1-select">入学年度 </label>
 						<select class="form-select " id="student-f1-select" name="f1">
 							<option value="0">--------</option>
@@ -25,44 +26,45 @@
 							</c:forEach>
 						</select>
 					</div>
-					<div class="col-4">
+					<div class="col-4"style="width:20%; margin-left:10px; padding:10px">
 						<label class="form-label" for="student-f2-select">クラス</label>
 						<select class="form-select " id="student-f2-select" name="f2">
 							<option value="0">--------</option>
 							<c:forEach var="clist" items="${class_list}">
 								<%-- 現在のnumと選択されていたf2が一致していた場合selectedを追記 --%>
-								<option value="${clist}" >${clist}</option>
+								<option value="${clist}">${clist}</option>
 							</c:forEach>
 						</select>
 					</div>
-					<div class="col-4">
-						<label class="form-label" for="student-f3-select">科目</label>
+					<div class="col-4"style="width:20%; margin-left:10px; padding:10px;">
+					    <label class="form-label" for="student-f3-select">科目</label>
 						<select class="form-select " id="student-f3-select" name="f3">
 							<option value="0">--------</option>
 							<c:forEach var="sublist" items="${subject_list}">
-							    現在のnumと選択されていたf3が一致していた場合selectedを追記
-								<option value="${sublist.cd}" <c:if test="${sublist.cd==f3}">selected</c:if>>${sublist.name}</option>
+								<%--現在のnumと選択されていたf3が一致していた場合selectedを追記--%>
+								<option value="${sublist.cd}" >${sublist.name}</option>
 							</c:forEach>
 						</select>
 					</div>
 
-					<div class="col-2 text-center">
-						<button class="btn btn-secondary" id="filter-button">絞込み</button>
+					<div class="col-4 text-center"style="width:15%; margin-left:10px; padding:5px;">
+						<button class="btn btn-secondary" id="filter-button">検索</button>
 					</div>
-					<%--<div class="mt-2 text-warning">${errors.get("f1")}</div>--%>
+					<div class="mt-2 text-warning">${errors.get("f1")}</div>
 				</div>
 			</form>
 			<form action="TestListStudent.action" method="post">
 				<div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
-					<div class="col-4">
+				    <div class="col-3"style="width:15%; margin-left:5px; padding:5px">学生情報</div>
+					<div class="col-3"style="width:40%; margin-left:10px; padding:10px">
 						<label class="form-label" for="student-f4-select">学生番号 </label>
                         <input class="form-control" type="text" id="student-f4-select"
                             name="no" placeholder="学生番号を入力してください" value="${no}" required />
 					</div>
-					<%--<div class="mt-2 text-warning">${errors.get("no")}</div>--%>
-                    <div class="mt-3">
-                        <input class="btn btn-primary" id="filter-button" type="submit" value="検索">
-                    </div>
+ 					<div class="col-3 text-center"style="width:15%; margin-left:10px; padding:5px;">
+						<button class="btn btn-secondary" id="filter-button">検索</button>
+					</div>
+					<div class="mt-2 text-warning">${errors.get("no")}</div>
 				</div>
 			</form>
 		</section>
