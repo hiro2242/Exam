@@ -45,7 +45,7 @@
 						</select>
 					</div>
 
-					<div class="col-2 text-center">
+					<div class="mt-2">
 						<button class="btn btn-secondary" id="filter-button">絞込み</button>
 					</div>
 					<div class="mt-2 text-warning">${errors.get("f1")}</div>
@@ -59,8 +59,8 @@
                             name="no" placeholder="学生番号を入力してください" value="${no}" required />
 					</div>
 					<div class="mt-2 text-warning">${errors.get("no")}</div>
-                    <div class="mt-3">
-                        <input class="btn btn-primary" id="filter-button" type="submit" value="検索">
+                    <div class="mt-2">
+                        <input class="btn btn-secondary" id="filter-button" type="submit" value="検索">
                     </div>
 				</div>
 			</form>
