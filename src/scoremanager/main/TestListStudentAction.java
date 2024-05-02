@@ -46,6 +46,7 @@ public class TestListStudentAction extends Action{
 		List<TestListSubject> tlsub = null;
 		if (student == null || teacher.getSchool().equals(student)){
 			errors.put("no", "存在しない学生番号です");
+			req.setAttribute("ent_year_set", entYearSet);
 			req.setAttribute("class_list", list);
 			req.setAttribute("subject_list", sublist);
 			req.setAttribute("student", student);
@@ -53,6 +54,7 @@ public class TestListStudentAction extends Action{
 			req.getRequestDispatcher("test_list_student.jsp").forward(req, res);
 		}else {
 		    tlsub = tlsDao.filter(student);
+			req.setAttribute("ent_year_set", entYearSet);
 		    req.setAttribute("class_list", list);
 		    req.setAttribute("subject_list", sublist);
 			req.setAttribute("student", student);
